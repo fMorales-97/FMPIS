@@ -1,0 +1,28 @@
+#!/bin/sh
+
+GREEN="\033[0;32m"
+RED="\033[0;31m"
+BOLD="\033[1m"
+NC="\033[0m"
+
+echo "¿Qué desea grabar?"
+echo "1) Video"
+echo "2) Audio"
+echo "3) Audio y Video"
+echo "q) Cancelar"
+read ANSWER
+
+case "$ANSWER" in
+  1)  ffmpeg -f x11grab -framerate 50 -video_size 1366x768 -i :0.0 -c:v libx264 video.mkv
+  ;;
+  2)  ffmpeg -f alsa -i hw:0 audio.wav
+  ;;
+  3)  ffmpeg -f x11grab -s 1366x768 -i :0.0 -f alsa -i hw:0 video.mkv
+  ;;
+  q)  echo "Ha cancelado la operación"
+      sleep 1
+  ;;
+  *)  echo -e "${RED}${BOLD}Esa no es una opción válida${NC}"
+      sleep 1
+  ;;
+esac

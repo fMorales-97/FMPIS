@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Ejecutar XAMPP independiente de la terminal y eliminar el archivo generado por nohup
+nohup /opt/lampp/./manager-linux-x64.run > /dev/null &
