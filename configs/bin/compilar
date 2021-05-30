@@ -21,27 +21,31 @@ else
 
 # Ejecutar una accion segun la respuesta del usuario
     case "$ANSWER" in
-      y)  echo "¿Qué nombre tendrá el documento?"
-          read NAME
-          refer $FILE | pdfmom -kt > $NAME.pdf
-          echo -e "${GREEN}${BOLD}El documento ha sido compilado satisfactoriamente${NC}"
-          sleep 1
-          EXIT=true
-      ;;
-      n)  echo "¿Qué nombre tendrá el documento?"
-          read NAME
-          pdfmom $FILE -kt > $NAME.pdf
-          echo -e "${GREEN}${BOLD}El documento ha sido compilado satisfactoriamente${NC}"
-          sleep 1
-          EXIT=true
-      ;;
-      q)  echo "Ha cancelado la operación"
-          sleep 1
-          EXIT=true
-      ;;
-      *)  echo -e "${RED}${BOLD}Esa no es una opción válida${NC}"
-          sleep 1
-      ;;
+      y)
+        echo "¿Qué nombre tendrá el documento?"
+        read NAME
+        refer $FILE | pdfmom -kt > $NAME.pdf
+        echo -e "${GREEN}${BOLD}El documento ha sido compilado satisfactoriamente${NC}"
+        sleep 1
+        EXIT=true
+        ;;
+      n)
+        echo "¿Qué nombre tendrá el documento?"
+        read NAME
+        pdfmom $FILE -kt > $NAME.pdf
+        echo -e "${GREEN}${BOLD}El documento ha sido compilado satisfactoriamente${NC}"
+        sleep 1
+        EXIT=true
+        ;;
+      q)
+        echo "Ha cancelado la operación"
+        sleep 1
+        EXIT=true
+        ;;
+      *)
+        echo -e "${RED}${BOLD}Esa no es una opción válida${NC}"
+        sleep 1
+        ;;
     esac
   done  
 fi

@@ -10,19 +10,25 @@ echo "1) Video"
 echo "2) Audio"
 echo "3) Audio y Video"
 echo "q) Cancelar"
+echo ""
 read ANSWER
 
 case "$ANSWER" in
-  1)  ffmpeg -f x11grab -framerate 50 -video_size 1366x768 -i :0.0 -c:v libx264 video.mkv
-  ;;
-  2)  ffmpeg -f alsa -i hw:0 audio.wav
-  ;;
-  3)  ffmpeg -f x11grab -s 1366x768 -i :0.0 -f alsa -i hw:0 video.mkv
-  ;;
-  q)  echo "Ha cancelado la operación"
-      sleep 1
-  ;;
-  *)  echo -e "${RED}${BOLD}Esa no es una opción válida${NC}"
-      sleep 1
-  ;;
+  1)
+    ffmpeg -f x11grab -framerate 30 -video_size 1366x768 -i :0.0 -c:v libx264 video.mkv
+    ;;
+  2)
+    ffmpeg -f alsa -i hw:0 audio.wav
+    ;;
+  3)
+    ffmpeg -f x11grab -framerate 30 -video_size 1366x768 -i :0.0 -f alsa -i hw:0 video.mkv
+    ;;
+  q)
+    echo "Ha cancelado la operación"
+    sleep 1
+    ;;
+  *)
+    echo -e "${RED}${BOLD}Esa no es una opción válida${NC}"
+    sleep 1
+    ;;
 esac
