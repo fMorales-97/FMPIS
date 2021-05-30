@@ -34,6 +34,9 @@ case "$ANSWER" in
       mv Fradwaita ~/.themes
     fi
     echo ""
+    echo -e "${BOLD}${GREEN}Corrección de colores de Gruvbox${NC}"
+    echo "source /usr/share/vim/vimfiles/gruvbox_256palette.sh" >> ~/.zshrc
+    echo ""
     echo -e "${BOLD}${GREEN}Iniciando Powerlevel10k${NC}"
     echo "source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
     echo ""

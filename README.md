@@ -7,4 +7,5 @@ Este repositorio contiene mis scripts para configurar/personalizar una instalaci
 - Mi configuración del lector de pdf Zathura
 - Mis shell scripts personales
 - Mi archivo vimrc
+- Mi carpeta vim
 - Mi tema de gnome-shell
