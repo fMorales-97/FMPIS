@@ -4,6 +4,7 @@ let mapleader = ","
 " Configuraciones generales
 set nocompatible
 set encoding=utf-8
+set confirm
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -12,7 +13,7 @@ set number relativenumber
 set cursorline
 set wrap linebreak nolist
 set splitbelow splitright
-set hlsearch
+set nohlsearch
 set nospell spelllang=es,en_us
 filetype indent plugin on
 syntax on
@@ -44,6 +45,9 @@ nnoremap tl :tabnext<Enter>
 
 " Configurar explorador de archivos
 nnoremap <Leader>f :Lex!<Enter>:vert res -26<Enter>
+
+" Remapea la tecla leader de emmet
+let g:user_emmet_leader_key='<C-z>'
 
 " Gruvbox color scheme
 let g:gruvbox_guisp_fallback = "bg"
