@@ -113,6 +113,7 @@ case "$ANSWER" in
 
       # Utilidades -------------------------------------------------
       'vim-gruvbox-git'
+      'vim-airline-gruvbox-git'
     )
     for PROGRAMA_AUR in "${PROGRAMAS_AUR[@]}"; do
       echo ""
