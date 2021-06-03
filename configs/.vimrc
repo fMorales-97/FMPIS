@@ -3,8 +3,10 @@ let mapleader = ","
 
 " Configuraciones generales
 set nocompatible
+set noshowmode
 set encoding=utf-8
 set confirm
+set colorcolumn=80
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -53,9 +55,9 @@ nnoremap <Leader>f :Lex!<CR>
 let g:user_emmet_leader_key='<C-z>'
 
 " Configuracion de Airline
-let g:airline_extensions = ['tabline']
+let g:airline_extensions = ['branch', 'tabline']
 let g:airline#extensions#tabline#show_buffers = 0
-set ttimeoutlen=50
+set ttimeoutlen=10
 
 " Configuracion para archivos Groff mom
 autocmd BufRead,BufNewFile *.mom  set textwidth=68 colorcolumn=68 filetype=groff
