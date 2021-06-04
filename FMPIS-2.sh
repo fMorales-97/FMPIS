@@ -15,6 +15,12 @@ case "$ANSWER" in
     echo "Iniciando personalización del sistema operativo"
     sleep 1
     echo ""
+    echo -e "${BOLD}${GREEN}Iniciando Auto CPU-Freq"
+    sleep 1
+    sudo systemctl start auto-cpufreq
+    sudo systemctl enable auto-cpufreq
+    sudo auto-cpufreq --live
+    echo ""
     echo -e "${BOLD}${GREEN}Instalando mis configuraciones${NC}"
     sleep 1
     mv configs/alacritty ~/.config

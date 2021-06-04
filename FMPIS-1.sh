@@ -60,7 +60,6 @@ case "$ANSWER" in
 
       # Utilidades -------------------------------------------------
       'yay'
-      'tlp'
       'gufw'
       'cmatrix'
       'htop'
@@ -112,6 +111,7 @@ case "$ANSWER" in
       'nerd-fonts-roboto-mono'
 
       # Utilidades -------------------------------------------------
+      'auto-cpufreq-git'
       'vim-gruvbox-git'
       'vim-airline-gruvbox-git'
     )
