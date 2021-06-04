@@ -41,15 +41,18 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <Up> :resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Down> :resize -2<CR>
 
 " Configura las teclas para moverse entre Tabs
 nnoremap th :tabprevious<CR>
 nnoremap tl :tabnext<CR>
 
 " Configurar explorador de archivos
-nnoremap <Leader>f :Lex!<CR>
+nnoremap <Leader>f :Vex!<CR>
+let g:netrw_liststyle=3
 
 " Remapea la tecla leader de emmet
 let g:user_emmet_leader_key='<C-z>'
