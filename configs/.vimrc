@@ -15,11 +15,18 @@ set cursorline
 set wildmenu
 set wrap linebreak nolist
 set splitbelow splitright
-set hlsearch is
+set hlsearch is 
 set nospell spelllang=es,en_us
+set foldmethod=manual
 filetype indent plugin on
 syntax on
-autocmd vimenter * set autoindent
+set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone
+autocmd BufWinEnter *.* set autoindent smartindent
+
+" Guarda y carga los foldings que existan al cerrar o abrir archivos
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
 
 " Configura el espacio para accionar los comandos
 nnoremap <Space> :
@@ -33,6 +40,12 @@ inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap < <><Left>
 
+" Salto de linea indentado entre etiquetas HTML
+inoremap <C-@> <CR><Esc>O<Tab>
+
+" Mapeado para Omnifunc
+inoremap <C-s> <C-x><C-o>
+
 " Mapea la letra S para ejecutar sed en todo el documento
 nnoremap S :%s//g<Left><Left>
 
@@ -41,18 +54,19 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <Up> :resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
-nnoremap <Left> :vertical resize +2<CR>
-nnoremap <Down> :resize -2<CR>
+nnoremap <silent> <Up> :resize +2<CR>
+nnoremap <silent> <Right> :vertical resize -2<CR>
+nnoremap <silent> <Left> :vertical resize +2<CR>
+nnoremap <silent> <Down> :resize -2<CR>
 
 " Configura las teclas para moverse entre Tabs
-nnoremap th :tabprevious<CR>
-nnoremap tl :tabnext<CR>
+nnoremap <silent> th :tabprevious<CR>
+nnoremap <silent> tl :tabnext<CR>
 
 " Configurar explorador de archivos
-nnoremap <Leader>f :Vex!<CR>
+nnoremap <silent> <Leader>f :Vex!<CR>
 let g:netrw_liststyle=3
+let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
 
 " Remapea la tecla leader de emmet
 let g:user_emmet_leader_key='<C-z>'
@@ -62,10 +76,7 @@ let g:airline_extensions = ['branch', 'tabline']
 let g:airline#extensions#tabline#show_buffers = 0
 set ttimeoutlen=10
 
-" Configuracion para archivos Groff mom
-autocmd BufRead,BufNewFile *.mom  set textwidth=68 colorcolumn=68 filetype=groff
-
 " Gruvbox color scheme
 let g:gruvbox_guisp_fallback = "bg"
-autocmd vimenter * ++nested colorscheme gruvbox
+autocmd VimEnter * ++nested colorscheme gruvbox
 set background=dark

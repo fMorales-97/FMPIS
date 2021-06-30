@@ -60,6 +60,7 @@ case "$ANSWER" in
 
       # Utilidades -------------------------------------------------
       'yay'
+      'tlp'
       'gufw'
       'cmatrix'
       'htop'
@@ -76,7 +77,6 @@ case "$ANSWER" in
     PROGRAMAS_FLAT=(
       # Desarrollo web ---------------------------------------------
       'com.getpostman.Postman'
-      'io.github.Figma_Linux.figma.linux'
 
       # Aplicaciones favoritas -------------------------------------
       'com.spotify.Client'
@@ -103,6 +103,7 @@ case "$ANSWER" in
     sleep 1
     PROGRAMAS_AUR=(
       # Desarrollo web ---------------------------------------------
+      'figma-linux'
       'xmind-2020'
       'xampp'
 
