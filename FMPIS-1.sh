@@ -35,7 +35,6 @@ case "$ANSWER" in
       # Desarrollo web ---------------------------------------------
       'firefox'
       'chromium'
-      'brave'
       'code'
       'inkscape'
       'gimp'
@@ -54,9 +53,6 @@ case "$ANSWER" in
       'zathura-pdf-poppler'
       'zathura-ps'
       'vim'
-      'aspell'
-      'aspell-en'
-      'aspell-es'
 
       # Utilidades -------------------------------------------------
       'yay'
@@ -120,7 +116,7 @@ case "$ANSWER" in
       echo ""
       echo -e "${BOLD}${GREEN}Instalando:${NC} ${PROGRAMA_AUR}"
       sleep 1
-      yay -S "${PROGRAMA_AUR}"
+      yay -S --noconfirm "${PROGRAMA_AUR}"
     done
     echo ""
     echo -e "${BOLD}${GREEN}La primera parte del script ha finalizado${NC}"
